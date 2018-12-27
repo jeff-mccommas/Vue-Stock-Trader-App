@@ -2,7 +2,7 @@
   <div class="md-layout">
     <div class="md-layout-item">
       <app-header></app-header>
-      <router-view></router-view>
+      <router-view />
     </div>
   </div>
 </template>

@@ -7,11 +7,10 @@ import Stocks from './components/stocks/Stocks.vue'
 Vue.use(Router)
 
 export default new Router({
+  base: __dirname,
   routes: [
     { path: '/', component: Home },
     { path: '/portfolio', component: Portfolio },
     { path: '/stocks', component: Stocks }
-    
- 
   ]
 })
