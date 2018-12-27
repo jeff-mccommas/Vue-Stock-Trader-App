@@ -1,27 +1,13 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueMaterial from 'vue-material'
-import {
-  MdButton,
-  MdContent,
-  MdTabs,
-  MdLayout,
-  MdMenu
-} from '../node_modules/vue-material/dist/components'
-import '../node_modules/vue-material/dist/vue-material.min.css'
-// import '../node_modules/vue-material/dist/theme/default.css'
-// import '../node_modules/vue-material/dist/theme/engine.scss'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.min.css';
+import 'vue-material/dist/theme/default.css';
 
-Vue.use(MdButton)
-Vue.use(MdContent)
-Vue.use(MdTabs)
-Vue.use(MdMenu)
-Vue.use(MdLayout)
-
-
+Vue.config.productionTip = false
 Vue.use(VueMaterial)
-
 new Vue({
-  el: '#app',
+  router,
   render: h => h(App)
-})
+}).$mount('#app')
