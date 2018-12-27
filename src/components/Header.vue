@@ -1,22 +1,31 @@
 <template>
   <div>
     <div class="menu-wrapper">
-      <md-menu md-direction="bottom-start">
-        <md-button md-menu-trigger>
-          <md-icon class="md-size-1x" routerLinkTo="/home">home</md-icon>
-        </md-button>
-      </md-menu>
+      <router-link tag="a" to="/">
+        <md-menu md-direction="bottom-start">
+          <md-button md-menu-trigger>
+            <md-icon class="md-size-1x">home</md-icon>
+          </md-button>
+        </md-menu>
+      </router-link>
 
-      <md-menu md-direction="bottom-end">
-        <md-button md-menu-trigger routerLinkTo="portfolio">Portfolio</md-button>
-      </md-menu>
+      <router-link tag="a" to="/portfolio">
+        <md-menu md-direction="bottom-end">
+          <md-button md-menu-trigger>Portfolio</md-button>
+        </md-menu>
+      </router-link>
 
-      <md-menu md-direction="top-start">
-        <md-button md-menu-trigger outerLinkTo="stocks">Stocks</md-button>
-      </md-menu>
-      <md-menu md-direction="top-start">
-        <md-button md-menu-trigger outerLinkTo="stocks">End Day</md-button>
-      </md-menu>
+      <router-link tag="a" to="/stocks">
+        <md-menu md-direction="top-start">
+          <md-button md-menu-trigger outerLinkTo="stocks">Stocks</md-button>
+        </md-menu>
+      </router-link>
+
+      <router-link tag="a" to="/stocks">
+        <md-menu md-direction="top-start">
+          <md-button md-menu-trigger outerLinkTo="stocks">End Day</md-button>
+        </md-menu>
+      </router-link>
 
       <md-menu md-direction="top-end">
         <md-button md-menu-trigger>Save and Load</md-button>
