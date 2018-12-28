@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="menu-wrapper">
+    <div class="md-toolbar md-primary md-theme-default md-elevation-4">
       <router-link tag="a" to="/">
         <md-menu md-direction="bottom-start">
           <md-button md-menu-trigger>
@@ -53,8 +53,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.menu-wrapper {
-  background-color: #448aff;
-  height: 50px;
+.md-toolbar.md-primary.md-theme-default.md-elevation-4 {
+  background-color: #9c27b0 !important;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="md-layout">
     <div class="md-layout-item">
       <app-header></app-header>
-      <router-view />
+      <router-view/>
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
 import Header from "./components/Header.vue";
 import Portfolio from "./components/portfolio/Portfolio";
 import Stocks from "./components/stocks/Stocks";
-import Home from "./components/views/Home";
+import Home from "./components/Home";
 export default {
   components: {
     appHeader: Header,

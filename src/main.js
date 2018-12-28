@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
-import '../node_modules/vue-material/dist/theme/prebuilt/default-dark.scss';
+import '../node_modules/vue-material/dist/theme/prebuilt/default.scss';
 import './assets/css/icons.css';
 
 Vue.config.productionTip = false
