@@ -18,6 +18,9 @@ export default {
     Portfolio,
     Stocks,
     Home
+  },
+  created() {
+    this.$store.dispatch("initStocks");
   }
 };
 </script>

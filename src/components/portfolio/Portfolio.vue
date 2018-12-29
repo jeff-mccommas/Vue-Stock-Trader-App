@@ -1,10 +1,12 @@
 <template>
   <div>
-    <h1>portfolio stocks</h1>
+    <app-stock v-for="(stock, index) in stocks" :key="`stock-${index}`" :stock="stock"></app-stock>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import Stock from "../stocks/Stock.vue";
 export default {
   name: "Portfolio",
   data() {
@@ -13,7 +15,6 @@ export default {
   computed: {},
   mounted() {},
   methods: {}
-  
 };
 </script>
 

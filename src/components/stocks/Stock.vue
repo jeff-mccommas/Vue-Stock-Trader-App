@@ -12,12 +12,15 @@
 
               <md-card-content>
                 <md-field>
-                  <md-input type="number" v-model="quantity" placeholder="Quantity"></md-input>
+                  <md-input type="number" v-model.number="quantity">placeholder="Quantity"></md-input>
                 </md-field>
               </md-card-content>
 
               <md-card-actions>
-                <md-button @click="buyStock" md-success>Buy</md-button>
+                <md-button
+                  class="md-active md-primary md-alignment-center-right"
+                  @click="buystock"
+                >Buy</md-button>
               </md-card-actions>
             </md-ripple>
           </md-card>
@@ -41,8 +44,8 @@ export default {
     funds() {
       return this.$store.getters.funds;
     },
-    insufficientFunds() {
-      return this.quantity * this.stock.price > this.funds;
+    Disabled() {
+      return this.quantity <= 0 || !Number.isInteger(this.quantity);
     }
   },
   methods: {
@@ -58,3 +61,31 @@ export default {
   }
 };
 </script>
+<style >
+.md-card.md-theme-default.md-with-hover {
+  margin-top: 10px !important;
+}
+.md-card-header + .md-card-content {
+  padding-top: 0;
+}
+.md-card-header:first-child > .md-title:first-child {
+  margin-top: 0px;
+}
+.md-card-header {
+  padding: 0px;
+  background-color: #9c27b0 !important;
+  margin-top: 0px;
+  padding: 0px !important;
+  height: 40px !important;
+}
+.md-card .md-title {
+  font-size: 24px;
+  letter-spacing: 0 !important;
+  line-height: 26px !important;
+  color: #fff !important;
+  padding: 3px 0 3px 12px !important;
+}
+.md-card .md-subhead {
+  line-height: 35px !important;
+}
+</style>

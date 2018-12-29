@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <app-stock v-for="(stock, index) in stocks" :key="`stock-${index}`" :stock ="stock"></app-stock>
-    </div>
+  <div>
+    <app-stock v-for="(stock, index) in stocks" :key="`stock-${index}`" :stock="stock"></app-stock>
+  </div>
 </template>
 
 <script>
-import Stock from './Stock.vue'
+import Stock from "./Stock.vue";
 
- export default {
+export default {
   name: "Stock",
   data() {
     return {
@@ -22,10 +22,14 @@ import Stock from './Stock.vue'
   computed: {},
   mounted() {},
   methods: {},
-  components:{
-appStock: Stock
+  components: {
+    appStock: Stock
+  },
+  computed: {
+    stocks() {
+      return this.$store.getters.stocks;
+    }
   }
-
 };
 </script>
 

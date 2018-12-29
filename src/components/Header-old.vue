@@ -11,9 +11,9 @@
     <router-link tag="a" to="/stocks">
       <md-button md-menu-trigger outerLinkTo="stocks" activeClass="active">Stocks</md-button>
     </router-link>
-
-    <md-button md-menu-trigger outerLinkTo="stocks">End Day</md-button>
-
+    <router-link tag="a" to="/stocks">
+      <md-button md-menu-trigger outerLinkTo="stocks">End Day</md-button>
+    </router-link>
     <md-menu>
       <md-button md-menu-trigger>Save and Load</md-button>
 
@@ -22,7 +22,7 @@
         <md-menu-item @click="loadData">Load Data</md-menu-item>
       </md-menu-content>
     </md-menu>
-    <md-button class="funds">Funds: {{ funds | currency }}</md-button>
+    <md-button class="funds">funds</md-button>
   </div>
 </template>
 
