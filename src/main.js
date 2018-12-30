@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
+var Client = require('node-rest-client').Client;
+var client = new Client();
 import router from './router';
 import store from './store/store';
 import VueRouter from 'vue-router';
@@ -19,13 +21,20 @@ Vue.use(VueResource);
 
 {
   // GET /someUrl
-  Vue.http.get('vuejs-stock-trader-c806f.firebaseio.com').then(response => {
 
-    // get body data
-    this.someData = response.body;
-
-  }, response => {
-    // error callback
+  client.get("https://vuejs-stock-trader-c806f.firebaseio.com/", function (data, response) {
+    // parsed response body as js object
+    console.log(data);
+    // raw response
+    console.log(response);
+    // });  Vue.http.get('vuejs-stock-trader-c806f.firebaseio.com').then(res, err,data => {
+    //     let data = request.body;
+    //     res => {
+    //         console.log(res);
+    //       },
+    //       err => {
+    //         console.log("Error occured");
+    //       }
   });
 }
 
