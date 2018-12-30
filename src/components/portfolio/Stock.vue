@@ -7,7 +7,7 @@
             <md-ripple>
               <md-card-header>
                 <div class="md-title">{{stock.name}}</div>
-                <div class="md-subhead">{{stock.price}}</div>
+                <div class="md-subhead">{{ stock.price }} | Quantity: {{ stock.quantity }})</div>
               </md-card-header>
 
               <md-card-content>
@@ -19,7 +19,7 @@
               <md-card-actions>
                 <md-button
                   class="md-active md-primary md-alignment-center-right"
-                  @click="sellStock"
+                  @click="buystock"
                 >Buy</md-button>
               </md-card-actions>
             </md-ripple>
@@ -30,32 +30,32 @@
   </div>
 </template>
 
-<script>
-import { mapActions } from "vuex";
 
+
+<script>
 export default {
   props: ["stock"],
-  // data() {
-  //   return {
-  //     quantity: 0
-  //   };
-  // },
+  data() {
+    return {
+      quantity: 0
+    };
+  },
   computed: {
-    insufficientQuantity() {
-      return this.quantity > this.stock.quantity;
+    funds() {
+      return this.$store.getters.funds;
+    },
+    Disabled() {
+      return this.quantity <= 0 || !Number.isInteger(this.quantity);
     }
   },
   methods: {
-    ...mapActions({
-      placeSellOrder: "sellStock"
-    }),
-    sellStock() {
+    buyStock() {
       const order = {
         stockId: this.stock.id,
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      this.placeSellOrder(order);
+      this.$store.dispatch("buyStock", order);
       this.quantity = 0;
     }
   }
