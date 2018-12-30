@@ -1,6 +1,8 @@
-import Vue from 'vue';
+import Vue from 'Vue';
 
-export const loadData = ({commit}) => {
+export const loadData = ({
+    commit
+}) => {
     Vue.http.get('data.json')
         .then(response => response.json())
         .then(data => {
