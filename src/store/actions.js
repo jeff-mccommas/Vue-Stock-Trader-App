@@ -1,7 +1,5 @@
-import Vue from 'vue';
-import {
-    Client
-} from 'node-rest-client';
+import Vue from 'Vue';
+
 
 export const loadData = ({
     commit

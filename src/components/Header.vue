@@ -22,7 +22,7 @@
         <md-menu-item @click="loadData">Load Data</md-menu-item>
       </md-menu-content>
     </md-menu>
-    <md-button  class="funds">Funds: {{ funds | currency }}</md-button>
+    <md-button class="funds">Funds: {{ funds | currency }}</md-button>
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
       fetchData: "loadData"
     }),
     endDay() {
-      this.randomizeStocks();
+      vm.randomizeStocks();
     },
     saveData() {
       const data = {
@@ -54,7 +54,7 @@ export default {
         stockPortfolio: this.$store.getters.stockPortfolio,
         stocks: this.$store.getters.stocks
       };
-      this.$http.put("data.json", data);
+      client.$http.put("data.json", data);
     },
     loadData() {
       this.fetchData();

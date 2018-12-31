@@ -11,9 +11,9 @@
 
 <script>
 import Header from "./components/Header.vue";
-import Portfolio from "./components/portfolio/Portfolio";
-import Stocks from "./components/stocks/Stocks";
-import Home from "./components/Home";
+import Portfolio from "./components/portfolio/Portfolio.vue";
+import Stocks from "./components/stocks/Stocks.vue";
+import Home from "./components/Home.vue";
 export default {
   components: {
     appHeader: Header,
