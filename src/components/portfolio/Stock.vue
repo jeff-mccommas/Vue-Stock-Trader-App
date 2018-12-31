@@ -19,8 +19,9 @@
               <md-card-actions>
                 <md-button
                   class="md-active md-primary md-alignment-center-right"
-                  @click="buystock"
-                >Buy</md-button>
+                  @click="sellStock"
+                  :disabled="insufficientQuantity || quantity <= 0 || !Number.isInteger(quantity)"
+                >{{ insufficientQuantity ? 'Not enough' : 'Sell' }}</md-button>
               </md-card-actions>
             </md-ripple>
           </md-card>
@@ -64,6 +65,9 @@ export default {
 };
 </script>
 <style >
+.danger {
+  border: 1px solid red;
+}
 .md-card.md-theme-default.md-with-hover {
   margin-top: 10px !important;
 }

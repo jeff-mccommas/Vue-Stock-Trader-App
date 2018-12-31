@@ -62,6 +62,9 @@ export default {
 };
 </script>
 <style >
+.danger {
+        border: 1px solid red;
+    }
 .md-card.md-theme-default.md-with-hover {
   margin-top: 10px !important;
 }
