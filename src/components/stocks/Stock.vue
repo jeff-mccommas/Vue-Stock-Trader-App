@@ -32,8 +32,6 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-
 export default {
   props: ["stock"],
   data() {
@@ -42,21 +40,21 @@ export default {
     };
   },
   computed: {
-    insufficientQuantity() {
-      return this.quantity > this.stock.quantity;
+    funds() {
+      return this.$store.getters.funds;
+    },
+    insufficientFunds() {
+      return this.quantity * this.stock.price > this.funds;
     }
   },
   methods: {
-    ...mapActions({
-      placeSellOrder: "sellStock"
-    }),
-    sellStock() {
+    buyStock() {
       const order = {
         stockId: this.stock.id,
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      this.placeSellOrder(order);
+      this.$store.dispatch("buyStock", order);
       this.quantity = 0;
     }
   }
