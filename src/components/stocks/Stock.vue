@@ -19,8 +19,9 @@
               <md-card-actions>
                 <md-button
                   class="md-active md-primary md-alignment-center-right"
-                  @click="sellStock"
-                >Buy</md-button>
+                  @click="buyStock"
+                  :disabled="insufficientFunds || quantity <= 0 || !Number.isInteger(quantity)"
+                >{{ insufficientFunds ? 'Insufficient Funds' : 'Buy' }}</md-button>
               </md-card-actions>
             </md-ripple>
           </md-card>
@@ -35,11 +36,11 @@ import { mapActions } from "vuex";
 
 export default {
   props: ["stock"],
-  // data() {
-  //   return {
-  //     quantity: 0
-  //   };
-  // },
+  data() {
+    return {
+      quantity: 0
+    };
+  },
   computed: {
     insufficientQuantity() {
       return this.quantity > this.stock.quantity;
@@ -63,8 +64,8 @@ export default {
 </script>
 <style >
 .danger {
-        border: 1px solid red;
-    }
+  border: 1px solid red;
+}
 .md-card.md-theme-default.md-with-hover {
   margin-top: 10px !important;
 }

@@ -1,9 +1,12 @@
 import Vue from 'vue';
+import {
+    Client
+} from 'node-rest-client';
 
 export const loadData = ({
     commit
 }) => {
-    Vue.http.get('data.json')
+    client.http.get('data.json')
         .then(response => response.json())
         .then(data => {
             if (data) {
