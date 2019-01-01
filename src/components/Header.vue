@@ -54,7 +54,7 @@ export default {
         stockPortfolio: this.$store.getters.stockPortfolio,
         stocks: this.$store.getters.stocks
       };
-      client.$http.put("data.json", data);
+      Vue.axios.put("stocks.json", data);
     },
     loadData() {
       this.fetchData();
@@ -63,6 +63,7 @@ export default {
 };
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .md-toolbar.md-primary.md-theme-default.md-elevation-4 {
   background-color: #9c27b0 !important;

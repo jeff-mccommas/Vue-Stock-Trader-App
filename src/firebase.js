@@ -13,5 +13,6 @@ const firebaseapp = firebase.initializeApp(config);
 
 export const db = firebaseapp.database();
 export const stocksRef = db.ref('stocks');
+export const stockPortfolioRef = db.ref('stockPortfolio');
 export const fundsRef = db.ref('funds');
 export const firestore = firebaseapp.firestore();
