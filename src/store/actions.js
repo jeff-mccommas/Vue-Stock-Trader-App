@@ -8,7 +8,7 @@ export const loadData = ({
         .then(data => {
             if (data) {
                 const stocks = data.data.stocks;
-                const funds = data.funds;
+                const funds = data.data.funds;
                 const stockPortfolio = data.stockPortfolio;
 
                 const portfolio = {
