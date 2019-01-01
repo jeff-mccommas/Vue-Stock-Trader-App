@@ -10,6 +10,9 @@ const mutations = {
       stock.price = Math.round(stock.price * (1 + Math.random() - 0.5));
     });
   },
+  SET_STOCKS(state, stocks) {    
+    state.stocks = stocks;
+  }
 };
 
 const actions = {

@@ -28,7 +28,7 @@
 
 <script>
 import { mapActions } from "vuex";
-
+import Vue from 'vue';
 export default {
   data() {
     return {
@@ -54,7 +54,7 @@ export default {
         stockPortfolio: this.$store.getters.stockPortfolio,
         stocks: this.$store.getters.stocks
       };
-      Vue.axios.put("stocks.json", data);
+      Vue.axios.put("https://vuejs-stock-trader-c806f.firebaseio.com/stocks.json", JSON.stringify(data));
     },
     loadData() {
       this.fetchData();

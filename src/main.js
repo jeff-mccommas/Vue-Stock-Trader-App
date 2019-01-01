@@ -19,11 +19,11 @@ Vue.use(VueMaterial)
 Vue.use(VueRouter);
 Vue.use(VueFire);
 Vue.use(VueAxios, axios);
-axios.get('https://vuejs-stock-trader-c806f.firebaseio.com/.json', {
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-  }
-}).then((response) => {
+cors-issue
+axios.get('https://vuejs-stock-trader-c806f.firebaseio.com/.json', {headers: {
+	  'Access-Control-Allow-Origin': '*',
+	}}).then((response) => {
+
   console.log(response.data)
 })
 

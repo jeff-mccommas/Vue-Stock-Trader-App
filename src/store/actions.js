@@ -3,11 +3,11 @@ import Vue from 'vue';
 export const loadData = ({
     commit
 }) => {
-    Vue.axios.get('stocks.json')
-        .then(response => response.json())
+    Vue.axios.get('https://vuejs-stock-trader-c806f.firebaseio.com/stocks.json')
+        // .then(response => response.json())
         .then(data => {
             if (data) {
-                const stocks = data.stocks;
+                const stocks = data.data.stocks;
                 const funds = data.funds;
                 const stockPortfolio = data.stockPortfolio;
 
