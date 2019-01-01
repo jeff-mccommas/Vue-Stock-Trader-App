@@ -14,6 +14,8 @@ import Header from "./components/Header.vue";
 import Portfolio from "./components/portfolio/Portfolio.vue";
 import Stocks from "./components/stocks/Stocks.vue";
 import Home from "./components/Home.vue";
+import { stocksRef, fundsRef } from './firebase'
+
 export default {
   components: {
     appHeader: Header,
@@ -22,7 +24,7 @@ export default {
     Home
   },
   created() {
-    this.$store.dispatch("initStocks");
+    this.$store.dispatch('setStocksRef', stocksRef)
   }
 };
 </script>

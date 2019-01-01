@@ -1,18 +1,25 @@
 <template>
   <div>
-    <app-stock v-for="(stock, index) in stocks" :key="`stock-${index}`" :stock="stock"></app-stock>
+    <app-stock
+      v-if="stocks"
+      v-for="(stock, index) in stocks"
+      :key="`stock-${index}`"
+      :stock="stock"
+    ></app-stock>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import Stock from "./Stock.vue";
+import { db, stocksRef } from "./../../firebase";
 
 export default {
   computed: {
-    ...mapGetters({
-      stocks: "stockPortfolio"
-    })
+    ...mapGetters({ stocks: "stockPortfolio" })
+  },
+  created() {
+    let data = [];
   },
   components: {
     appStock: Stock
