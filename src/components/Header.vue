@@ -63,7 +63,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .md-toolbar.md-primary.md-theme-default.md-elevation-4 {
   background-color: #9c27b0 !important;
